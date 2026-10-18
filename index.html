@@ -4,30 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff0f3">
-
+  <meta name="theme-color" content="#fff5f5">
   <title>Aung & Nan | Wedding Invitation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --rose: #bd7888;
+      --deep-rose: #96586b;
+      --pink: #f8e5e8;
+      --cream: #fffaf5;
+      --gold: #b89a63;
+      --text: #57434a;
+      --white: #ffffff;
     }
 
-    :root {
-      --pink-bg: #fff0f3;
-      --pink-light: #ffe0e7;
-      --pink: #d98299;
-      --pink-dark: #a94e6b;
-      --rose: #c76e88;
-      --gold: #b99a62;
-      --cream: #fffaf5;
-      --text: #66505a;
+    * {
+      box-sizing: border-box;
     }
 
     html {
@@ -35,246 +31,368 @@
     }
 
     body {
-      background: var(--pink-bg);
+      margin: 0;
       color: var(--text);
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
+      background: var(--cream);
+      font-family: "Poppins", sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
     }
 
-    .hero {
-      min-height: 100vh;
-      padding: 35px 20px;
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .cover {
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      padding: 32px 20px;
+      background:
+        radial-gradient(ellipse at top, rgba(255,255,255,.96), transparent 55%),
+        linear-gradient(145deg, #f6dfe4, #fffaf5 55%, #f3e4d7);
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse at top, #fffafc, transparent 70%),
-        linear-gradient(135deg, #fff0f3, #f9dce5);
     }
 
-    .frame {
-      width: 100%;
-      max-width: 650px;
-      padding: 55px 25px;
-      border: 1px solid var(--gold);
-      outline: 1px solid #e9bdc9;
-      outline-offset: -8px;
+    .cover::before,
+    .cover::after {
+      content: "❀";
+      position: absolute;
+      color: rgba(189, 120, 136, .24);
+      font-size: clamp(100px, 20vw, 220px);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .cover::before {
+      top: 2%;
+      left: -25px;
+      transform: rotate(-25deg);
+    }
+
+    .cover::after {
+      bottom: 0;
+      right: -20px;
+      transform: rotate(25deg);
+    }
+
+    .cover-card {
+      width: min(100%, 600px);
+      position: relative;
+      z-index: 1;
+      padding: clamp(28px, 7vw, 64px) 22px;
+      border: 1px solid rgba(184,154,99,.7);
+      outline: 1px solid rgba(184,154,99,.3);
+      outline-offset: 7px;
+      background: rgba(255,250,245,.78);
       border-radius: 180px 180px 12px 12px;
-      background: rgba(255, 250, 245, 0.55);
-      box-shadow: 0 15px 45px rgba(169, 78, 107, 0.08);
-    }
-
-    .flower {
-      color: var(--pink-dark);
-      font-size: 38px;
-      margin-bottom: 18px;
+      box-shadow: 0 15px 50px rgba(110,65,77,.08);
     }
 
     .eyebrow {
-      font-size: 11px;
-      letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--pink-dark);
+      letter-spacing: 4px;
+      color: var(--deep-rose);
+      font-size: 11px;
     }
 
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(58px, 12vw, 88px);
-      font-weight: 400;
-      color: var(--pink-dark);
-      line-height: 1.25;
-      margin-top: 22px;
-    }
-
-    .and {
-      font-family: 'Great Vibes', cursive;
-      font-size: 42px;
+    .floral {
       color: var(--gold);
+      font-size: 26px;
+      margin: 16px 0;
     }
 
-    .intro {
-      font-family: 'Playfair Display', serif;
-      font-size: 17px;
-      line-height: 1.9;
-      margin: 25px auto;
-      max-width: 400px;
+    h1,
+    h2,
+    .script {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
     }
 
-    .date {
-      font-family: 'Playfair Display', serif;
-      color: var(--pink-dark);
-      font-size: 22px;
-      letter-spacing: 2px;
-      margin: 22px 0 8px;
+    .cover h1 {
+      font-size: clamp(45px, 11vw, 76px);
+      line-height: 1.05;
+      color: var(--deep-rose);
+      margin: 16px 0;
     }
 
-    .year {
-      letter-spacing: 5px;
-      font-size: 12px;
+    .ampersand {
+      display: block;
+      color: var(--gold);
+      font-size: .72em;
+      font-style: italic;
+      margin: 4px 0;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 13px 26px;
-      margin-top: 25px;
-      border: 1px solid var(--pink-dark);
+    .cover-date {
+      letter-spacing: 3px;
+      font-size: 13px;
+      margin: 22px 0;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 12px 24px;
+      border: 1px solid var(--rose);
       border-radius: 30px;
-      color: white;
-      background: var(--pink-dark);
+      background: var(--rose);
+      color: var(--white);
       text-decoration: none;
-      font-family: inherit;
-      font-size: 12px;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: 0.3s;
+      transition: .25s ease;
+      font-size: 13px;
+      letter-spacing: .5px;
     }
 
-    .btn:hover {
-      background: var(--cream);
-      color: var(--pink-dark);
+    .button:hover {
+      background: var(--deep-rose);
+      border-color: var(--deep-rose);
       transform: translateY(-2px);
     }
 
-    section {
-      padding: 70px 22px;
+    .button-outline {
+      background: transparent;
+      color: var(--deep-rose);
     }
 
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      font-weight: 400;
-      color: var(--pink-dark);
-      margin: 16px 0 22px;
+    .button-outline:hover {
+      color: white;
     }
 
-    .details {
-      max-width: 520px;
-      margin: auto;
-      line-height: 2;
-      font-size: 14px;
-    }
-
-    .countdown {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 22px;
-      margin: 32px 0;
-    }
-
-    .countdown div {
-      min-width: 58px;
-      padding: 12px 8px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.65);
-      border: 1px solid #f1d2dc;
-    }
-
-    .countdown strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 29px;
-      color: var(--pink-dark);
-    }
-
-    .countdown span {
-      font-size: 9px;
-      letter-spacing: 1px;
-    }
-
-    .venue {
-      background: linear-gradient(
-        145deg,
-        #f9dce5,
-        #fff1f4
-      );
-      border-top: 1px solid #f0d0d9;
-      border-bottom: 1px solid #f0d0d9;
-    }
-
-    .venue-name {
-      font-family: 'Playfair Display', serif;
-      color: var(--pink-dark);
-      font-size: 24px;
-      margin-bottom: 14px;
-    }
-
-    .address {
-      max-width: 450px;
-      margin: 12px auto;
-      overflow-wrap: anywhere;
-    }
-
-    .video-section {
-      background: var(--cream);
-    }
-
-    .video-icon {
-      font-size: 45px;
-      color: var(--pink-dark);
-      margin: 15px 0;
-    }
-
-    .video-description {
-      max-width: 440px;
-      margin: 0 auto;
-      line-height: 1.9;
-      font-size: 14px;
-    }
-
-    .video-btn {
-      background: linear-gradient(
-        135deg,
-        #c76e88,
-        #a94e6b
-      );
-      box-shadow: 0 7px 18px rgba(169, 78, 107, 0.2);
-    }
-
-    .footer {
-      padding: 40px 20px;
-      background: var(--pink-bg);
-      color: var(--pink-dark);
-      font-family: 'Great Vibes', cursive;
-      font-size: 34px;
-    }
-
-    .footer p {
-      font-family: 'Poppins', sans-serif;
-      font-size: 10px;
-      letter-spacing: 2px;
-      margin-top: 10px;
-    }
-
-    .hidden {
+    #invitation {
       display: none;
     }
 
+    #invitation.visible {
+      display: block;
+      animation: fadeIn .8s ease;
+    }
+
+    .section {
+      padding: 76px 20px;
+      text-align: center;
+    }
+
+    .section-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(38px, 8vw, 54px);
+      line-height: 1.1;
+      color: var(--deep-rose);
+      margin: 10px 0 22px;
+    }
+
+    .intro {
+      background: var(--white);
+    }
+
+    .intro-message {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .names {
+      color: var(--deep-rose);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 8vw, 64px);
+      line-height: 1.1;
+      margin: 24px 0;
+    }
+
+    .names span {
+      display: block;
+      color: var(--gold);
+      font-style: italic;
+      font-size: .65em;
+      margin: 6px 0;
+    }
+
+    .countdown-section {
+      background: linear-gradient(145deg, #f8e5e8, #fff7f0);
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 550px;
+      margin: 30px auto 0;
+    }
+
+    .count-box {
+      padding: 18px 5px;
+      background: rgba(255,255,255,.8);
+      border: 1px solid rgba(184,154,99,.45);
+      border-radius: 12px;
+    }
+
+    .count-number {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(27px, 6vw, 42px);
+      color: var(--deep-rose);
+      line-height: 1.2;
+    }
+
+    .count-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .details-card {
+      max-width: 620px;
+      margin: 30px auto 0;
+      padding: clamp(24px, 5vw, 42px);
+      background: var(--white);
+      border: 1px solid #ead8d5;
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(110,65,77,.06);
+    }
+
+    .detail-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #f0e5e1;
+    }
+
+    .detail-item:last-child {
+      border-bottom: 0;
+    }
+
+    .detail-label {
+      display: block;
+      color: var(--gold);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .detail-value {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .video-section {
+      background: #fff;
+    }
+
+    .video-description {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      font-size: 14px;
+    }
+
+    .video-player {
+      display: none;
+      width: 100%;
+      margin: 30px auto 0;
+      padding: 12px;
+      background: #fffaf5;
+      border: 1px solid #e7d4d0;
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(110,65,77,.10);
+      text-align: left;
+    }
+
+    .video-player.open {
+      display: block;
+      animation: fadeIn .45s ease;
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 8px;
+      background: #1b1b1b;
+      display: block;
+    }
+
+    .video-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .video-note {
+      margin: 12px 0 0;
+      text-align: center;
+      font-size: 11px;
+      color: #8b747a;
+    }
+
+    .closing {
+      background: linear-gradient(145deg, #f8e5e8, #fffaf5);
+    }
+
+    .closing .section-title {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      padding: 22px 16px;
+      background: #fff;
+      color: #947c82;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: .5px;
+    }
+
+    .back-top {
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 480px) {
-      .frame {
-        padding: 45px 18px;
+      .section {
+        padding: 58px 17px;
       }
 
       .countdown {
-        gap: 9px;
+        gap: 6px;
       }
 
-      .countdown div {
-        min-width: 64px;
+      .count-box {
+        padding: 14px 2px;
       }
 
-      .countdown strong {
-        font-size: 24px;
+      .count-label {
+        font-size: 8px;
+        letter-spacing: .5px;
       }
 
-      section {
-        padding: 55px 18px;
+      .video-player {
+        padding: 7px;
       }
 
-      h2 {
-        font-size: 27px;
+      .button {
+        padding: 11px 18px;
       }
     }
   </style>
@@ -282,230 +400,322 @@
 
 <body>
 
-  <!-- WEDDING COVER -->
-  <header class="hero">
-    <div class="frame">
+  <!-- COVER -->
+  <section class="cover" id="cover">
+    <div class="cover-card">
+      <div class="eyebrow">Together with our families</div>
+      <div class="floral">❦</div>
 
-      <div class="flower">❀</div>
+      <p>We joyfully invite you to celebrate the wedding of</p>
 
-      <p class="eyebrow">
-        Together with our families
-      </p>
+      <h1>
+        Aung
+        <span class="ampersand">&</span>
+        Nan
+      </h1>
 
-      <p class="intro">
-        With love and happiness,<br>
-        we invite you to celebrate<br>
-        our special day.
-      </p>
+      <div class="floral">✧ ❀ ✧</div>
 
-      <h1>Aung</h1>
-      <p class="and">&</p>
-      <h1 style="margin-top: 0;">Nan</h1>
+      <div class="cover-date">25 · DECEMBER · 2026</div>
 
-      <p class="date">25 · DECEMBER</p>
-      <p class="year">2026</p>
+      <p>Two hearts, one beautiful journey.</p>
 
-      <button class="btn" onclick="openInvitation()">
-        OPEN INVITATION ♡
+      <button class="button" id="openInvitation" type="button">
+        Open Our Invitation ♡
       </button>
-
     </div>
-  </header>
+  </section>
 
-  <!-- WEDDING DETAILS -->
-  <main id="invitation" class="hidden">
+  <!-- MAIN INVITATION -->
+  <main id="invitation">
 
-    <section>
-      <p class="eyebrow">Save the date</p>
-      <h2>Our Wedding Day</h2>
+    <section class="section intro">
+      <div class="section-inner">
+        <div class="eyebrow">A day to remember</div>
+        <div class="floral">❦</div>
 
-      <p class="details">
-        Two hearts, one love, one beautiful journey.<br>
-        We would be delighted to share this special
-        moment with you.
-      </p>
+        <h2 class="section-title">We're Getting Married</h2>
 
-      <div class="countdown">
-        <div>
-          <strong id="days">00</strong>
-          <span>DAYS</span>
+        <p class="intro-message">
+          With hearts full of love and happiness, we invite you to join us
+          as we begin our new chapter together. Your presence and blessings
+          would make our special day even more meaningful.
+        </p>
+
+        <div class="names">
+          Aung
+          <span>&</span>
+          Nan
         </div>
 
-        <div>
-          <strong id="hours">00</strong>
-          <span>HOURS</span>
-        </div>
-
-        <div>
-          <strong id="minutes">00</strong>
-          <span>MINUTES</span>
-        </div>
-
-        <div>
-          <strong id="seconds">00</strong>
-          <span>SECONDS</span>
-        </div>
+        <p>Friday, 25 December 2026</p>
       </div>
-
-      <p class="date">Friday, 25 December 2026</p>
-
-      <p class="details">
-        Ceremony Time<br>
-        <strong>8:00 AM – 11:00 AM</strong>
-      </p>
     </section>
 
-    <!-- WEDDING VENUE -->
-    <section class="venue">
+    <!-- COUNTDOWN -->
+    <section class="section countdown-section">
+      <div class="section-inner">
+        <div class="eyebrow">Counting down to our forever</div>
+        <h2 class="section-title">The Big Day</h2>
 
-      <p class="eyebrow">Join us to celebrate</p>
-      <h2>Wedding Ceremony</h2>
+        <p>Every moment brings us closer to our forever.</p>
 
-      <p class="venue-name">Oriental House</p>
+        <div class="countdown" aria-label="Wedding countdown">
+          <div class="count-box">
+            <span class="count-number" id="days">--</span>
+            <span class="count-label">Days</span>
+          </div>
 
-      <p class="details">
-        <strong>Friday, 25 December 2026</strong><br>
-        9:00 AM – 11:00 AM
-      </p>
+          <div class="count-box">
+            <span class="count-number" id="hours">--</span>
+            <span class="count-label">Hours</span>
+          </div>
 
-      <p class="details address">
-        <strong>Venue Address</strong><br>
-        No.8, Corner of 64th Street &amp; 27th Street,
-        Aung Taw Mu Quarter, Chan Aye Thar Zan Tsp,
-        Mandalay
-      </p>
+          <div class="count-box">
+            <span class="count-number" id="minutes">--</span>
+            <span class="count-label">Minutes</span>
+          </div>
 
-      <a
-        class="btn"
-        href="https://www.google.com/maps/search/?api=1&amp;query=Oriental+House%2C+No.8%2C+Corner+of+64th+Street+and+27th+Street%2C+Aung+Taw+Mu+Quarter%2C+Chan+Aye+Thar+Zan%2C+Mandalay"
-        target="_blank"
-        rel="noopener noreferrer">
-        VIEW LOCATION ↗
-      </a>
+          <div class="count-box">
+            <span class="count-number" id="seconds">--</span>
+            <span class="count-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- WEDDING DETAILS -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="eyebrow">Please join us</div>
+        <h2 class="section-title">Wedding Details</h2>
+
+        <p>We look forward to celebrating this beautiful day with you.</p>
+
+        <div class="details-card">
+          <div class="floral">✧</div>
+
+          <div class="detail-item">
+            <span class="detail-label">Date</span>
+            <div class="detail-value">Friday, 25 December 2026</div>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">Time</span>
+            <div class="detail-value">9:00 AM – 11:00 AM</div>
+          </div>
+
+          <div class="detail-item">
+            <span class="detail-label">Venue</span>
+            <div class="detail-value">
+              <strong>Oriental House</strong><br>
+              No. 8, Corner of 64th Street & 27th Street,<br>
+              Aung Taw Mu Quarter, Chan Aye Thar Zan Township,<br>
+              Mandalay, Myanmar
+            </div>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <a
+              class="button"
+              href="https://www.google.com/maps/search/?api=1&query=Oriental+House+64th+Street+27th+Street+Mandalay+Myanmar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📍 View Location
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- PRE-WEDDING VIDEO -->
-    <section class="video-section">
+    <section class="section video-section" id="ourVideo">
+      <div class="section-inner">
+        <div class="eyebrow">Our love story</div>
+        <h2 class="section-title">A Little Memory of Us</h2>
 
-      <p class="eyebrow">A little story of our love</p>
+        <p class="video-description">
+          Every love story is beautiful, but ours is our favorite.
+          Enjoy a special video capturing a little piece of our journey.
+        </p>
 
-      <div class="video-icon">♡</div>
+        <button
+          class="button"
+          id="playVideo"
+          type="button"
+          aria-expanded="false"
+          aria-controls="videoPlayer"
+        >
+          ▶ Play Our Pre-Wedding Video
+        </button>
 
-      <h2>Our Pre-Wedding Film</h2>
+        <div class="video-player" id="videoPlayer">
+          <iframe
+            class="video-frame"
+            id="weddingVideo"
+            src="about:blank"
+            data-src="https://vortechcomms-my.sharepoint.com/personal/aung_thiha_vortechcomms_com1/_layouts/15/embed.aspx?UniqueId=ff53b303-20d0-4b21-8130-4de78d354a56&amp;nav=%7B%22playbackOptions%22%3A%7B%22startTimeInSeconds%22%3A0%7D%7D&amp;embed=%7B%22af%22%3Atrue%2C%22ust%22%3Afalse%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
+            title="TOGETHER-Wedding SlideShow Video.mp4"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
 
-      <p class="video-description">
-        Every love story is beautiful, but ours is
-        our favorite. We would love for you to watch
-        a little memory of our journey together.
-      </p>
+          <div class="video-actions">
+            <button
+              class="button button-outline"
+              id="closeVideo"
+              type="button"
+            >
+              ✕ Close Video
+            </button>
+          </div>
 
-      <a
-        class="btn video-btn"
-        href="https://vortechcomms-my.sharepoint.com/:v:/g/personal/aung_thiha_vortechcomms_com1/IQADs1P_0CAhS4EwTeeNNUpWASbqOo4EHF-EsRrseSvfwl0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=u06chm"
-        target="_blank"
-        rel="noopener noreferrer">
-        ▶ WATCH OUR VIDEO
-      </a>
-
-      <p class="details" style="margin-top: 15px;">
-        With love, Aung &amp; Nan
-      </p>
-
+          <p class="video-note">
+            Please enjoy our special memories ♡
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- CLOSING -->
-    <section>
-      <div class="flower">❀</div>
+    <section class="section closing">
+      <div class="section-inner">
+        <div class="floral">❦</div>
+        <h2 class="section-title">With Love, Aung & Nan</h2>
 
-      <h2>With Love &amp; Gratitude</h2>
+        <p>
+          We can't wait to share this unforgettable moment with you.
+          Thank you for being part of our love story.
+        </p>
 
-      <p class="details">
-        Your presence is the most precious gift
-        we could ask for.<br>
-        Thank you for being part of our story.
-      </p>
+        <p class="script" style="font-size: 28px; color: var(--deep-rose);">
+          Forever starts here ♡
+        </p>
 
-      <button class="btn" onclick="shareInvitation()">
-        SHARE OUR INVITATION ♡
-      </button>
+        <button class="button" id="shareInvitation" type="button">
+          ♡ Share Our Invitation
+        </button>
+
+        <div class="back-top">
+          <a href="#cover" style="color: var(--deep-rose); font-size: 12px;">
+            Back to Top ↑
+          </a>
+        </div>
+      </div>
     </section>
-
-    <footer class="footer">
-      Aung &amp; Nan
-      <p>25 · 12 · 2026</p>
-    </footer>
 
   </main>
 
+  <footer>
+    Made with love for Aung & Nan · 25 December 2026
+  </footer>
+
   <script>
-    function openInvitation() {
-      const invitation =
-        document.getElementById('invitation');
+    // Open the invitation
+    const openButton = document.getElementById("openInvitation");
+    const invitation = document.getElementById("invitation");
 
-      invitation.classList.remove('hidden');
+    openButton.addEventListener("click", () => {
+      invitation.classList.add("visible");
+      document.getElementById("cover").style.display = "none";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-      invitation.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-
-    // Wedding ceremony starts at 9:00 AM Myanmar time.
-    const weddingDate =
-      new Date('2026-12-25T09:00:00+06:30').getTime();
+    // Wedding countdown: 9:00 AM Myanmar time (UTC+06:30)
+    const weddingDate = new Date("2026-12-25T09:00:00+06:30").getTime();
 
     function updateCountdown() {
       const now = Date.now();
       const distance = weddingDate - now;
 
       if (distance <= 0) {
-        ['days', 'hours', 'minutes', 'seconds']
-          .forEach(id => {
-            document.getElementById(id).textContent = '00';
-          });
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
         return;
       }
 
-      document.getElementById('days').textContent =
-        Math.floor(distance / 86400000);
+      document.getElementById("days").textContent =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
 
-      document.getElementById('hours').textContent =
-        Math.floor((distance % 86400000) / 3600000);
+      document.getElementById("hours").textContent =
+        Math.floor((distance / (1000 * 60 * 60)) % 24);
 
-      document.getElementById('minutes').textContent =
-        Math.floor((distance % 3600000) / 60000);
+      document.getElementById("minutes").textContent =
+        Math.floor((distance / (1000 * 60)) % 60);
 
-      document.getElementById('seconds').textContent =
-        Math.floor((distance % 60000) / 1000);
+      document.getElementById("seconds").textContent =
+        Math.floor((distance / 1000) % 60);
     }
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    async function shareInvitation() {
-      const data = {
-        title: 'Aung & Nan Wedding Invitation',
-        text: 'Join us on 25 December 2026, from 9 AM to 11 AM, at Oriental House, Mandalay.',
+    // Load and play the SharePoint video inside the invitation
+    const playButton = document.getElementById("playVideo");
+    const closeButton = document.getElementById("closeVideo");
+    const videoPlayer = document.getElementById("videoPlayer");
+    const weddingVideo = document.getElementById("weddingVideo");
+
+    playButton.addEventListener("click", () => {
+      videoPlayer.classList.add("open");
+      playButton.setAttribute("aria-expanded", "true");
+
+      if (weddingVideo.src === "about:blank" ||
+          weddingVideo.getAttribute("src") === "about:blank") {
+        weddingVideo.src = weddingVideo.dataset.src;
+      }
+
+      videoPlayer.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    });
+
+    closeButton.addEventListener("click", () => {
+      // Resetting the iframe stops video playback
+      weddingVideo.src = "about:blank";
+      videoPlayer.classList.remove("open");
+      playButton.setAttribute("aria-expanded", "false");
+
+      document.getElementById("ourVideo").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+
+    // Share the invitation URL
+    const shareButton = document.getElementById("shareInvitation");
+
+    shareButton.addEventListener("click", async () => {
+      const shareData = {
+        title: "Aung & Nan Wedding Invitation",
+        text: "With love, we invite you to celebrate our wedding on 25 December 2026. ♡",
         url: window.location.href
       };
 
-      if (navigator.share) {
-        try {
-          await navigator.share(data);
-        } catch (error) {
-          if (error.name !== 'AbortError') {
-            alert('Please copy the invitation link from your browser.');
-          }
-        }
-      } else {
-        try {
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else if (navigator.clipboard &&
+                   window.isSecureContext) {
           await navigator.clipboard.writeText(window.location.href);
-          alert('Invitation link copied!');
-        } catch (error) {
-          prompt('Copy your invitation link:', window.location.href);
+          alert("Wedding invitation link copied!");
+        } else {
+          window.prompt(
+            "Copy and share our wedding invitation link:",
+            window.location.href
+          );
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          alert("Please copy the website link from your browser and share it.");
         }
       }
-    }
+    });
   </script>
 
 </body>
