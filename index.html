@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#faf5ef">
+
+  <title>Aung & Nan | Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #faf5ef;
+      --pink: #e9c5c4;
+      --green: #647b62;
+      --gold: #b69a65;
+      --text: #554b45;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at top, #fffaf5, transparent 70%),
+        var(--cream);
+    }
+
+    .frame {
+      width: 100%;
+      max-width: 650px;
+      padding: 55px 25px;
+      border: 1px solid var(--gold);
+      outline: 1px solid #dfc9a8;
+      outline-offset: -8px;
+      border-radius: 180px 180px 12px 12px;
+      position: relative;
+    }
+
+    .flower {
+      color: var(--green);
+      font-size: 38px;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(55px, 12vw, 85px);
+      font-weight: 400;
+      color: var(--green);
+      line-height: 1.25;
+      margin-top: 25px;
+    }
+
+    .and {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: var(--gold);
+      margin: 0;
+    }
+
+    .intro {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      line-height: 1.9;
+      margin: 25px auto;
+      max-width: 400px;
+    }
+
+    .date {
+      font-family: 'Playfair Display', serif;
+      color: var(--green);
+      font-size: 22px;
+      letter-spacing: 2px;
+      margin: 22px 0 8px;
+    }
+
+    .year {
+      letter-spacing: 5px;
+      font-size: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 28px;
+      margin-top: 28px;
+      border: 1px solid var(--green);
+      border-radius: 30px;
+      color: white;
+      background: var(--green);
+      text-decoration: none;
+      font-family: inherit;
+      font-size: 12px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--green);
+    }
+
+    section {
+      padding: 70px 22px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--green);
+      margin-bottom: 22px;
+    }
+
+    .details {
+      max-width: 500px;
+      margin: auto;
+      line-height: 2;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin: 30px 0;
+    }
+
+    .countdown div {
+      min-width: 55px;
+    }
+
+    .countdown strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: var(--green);
+    }
+
+    .countdown span {
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .venue {
+      background: #f1e9df;
+    }
+
+    .footer {
+      padding: 35px 20px;
+      color: var(--green);
+      font-family: 'Great Vibes', cursive;
+      font-size: 30px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .frame {
+        padding: 45px 18px;
+      }
+
+      .countdown {
+        gap: 12px;
+      }
+
+      .countdown strong {
+        font-size: 25px;
+      }
+
+      section {
+        padding: 55px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- COVER PAGE -->
+  <header class="hero">
+    <div class="frame">
+      <div class="flower">❀</div>
+
+      <p class="eyebrow">Together with our families</p>
+
+      <p class="intro">
+        With love and happiness,<br>
+        we invite you to celebrate<br>
+        our special day.
+      </p>
+
+      <h1>Aung</h1>
+      <p class="and">&</p>
+      <h1 style="margin-top: 0;">Nan</h1>
+
+      <p class="date">25 · DECEMBER</p>
+      <p class="year">2026</p>
+
+      <button class="btn" onclick="openInvitation()">
+        OPEN INVITATION ♡
+      </button>
+    </div>
+  </header>
+
+  <!-- INVITATION DETAILS -->
+  <main id="invitation" class="hidden">
+
+    <section>
+      <p class="eyebrow">Save the date</p>
+      <h2>Our Wedding Day</h2>
+
+      <p class="details">
+        Two hearts, one love, one beautiful journey.<br>
+        We would be delighted to share this special
+        moment with you.
+      </p>
+
+      <div class="countdown">
+        <div>
+          <strong id="days">00</strong>
+          <span>DAYS</span>
+        </div>
+        <div>
+          <strong id="hours">00</strong>
+          <span>HOURS</span>
+        </div>
+        <div>
+          <strong id="minutes">00</strong>
+          <span>MINUTES</span>
+        </div>
+        <div>
+          <strong id="seconds">00</strong>
+          <span>SECONDS</span>
+        </div>
+      </div>
+
+      <p class="date">25 December 2026</p>
+    </section>
+
+    <!-- VENUE: REPLACE WITH REAL DETAILS -->
+    <section class="venue">
+      <p class="eyebrow">Join us to celebrate</p>
+      <h2>Wedding Ceremony</h2>
+
+      <p class="details">
+        <strong>Time</strong><br>
+        Please update ceremony time<br><br>
+
+        <strong>Venue</strong><br>
+        Please add your wedding venue<br><br>
+
+        <strong>Address</strong><br>
+        Please add the full address
+      </p>
+
+      <a
+        class="btn"
+        href="https://maps.google.com/"
+        target="_blank"
+        rel="noopener noreferrer">
+        VIEW LOCATION
+      </a>
+    </section>
+
+    <section>
+      <div class="flower">❀</div>
+      <h2>With Love</h2>
+
+      <p class="details">
+        Your presence is the most precious gift
+        we could ask for.<br>
+        Thank you for being part of our story.
+      </p>
+
+      <button class="btn" onclick="shareInvitation()">
+        SHARE OUR INVITATION ♡
+      </button>
+    </section>
+
+    <footer class="footer">
+      Aung & Nan
+    </footer>
+
+  </main>
+
+  <script>
+    function openInvitation() {
+      const invitation = document.getElementById('invitation');
+
+      invitation.classList.remove('hidden');
+
+      invitation.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    // Wedding date: 25 December 2026
+    // Change the time if your ceremony starts at a specific hour.
+    const weddingDate = new Date(
+      '2026-12-25T10:00:00+06:30'
+    ).getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = weddingDate - now;
+
+      if (distance <= 0) {
+        ['days', 'hours', 'minutes', 'seconds']
+          .forEach(id => {
+            document.getElementById(id).textContent = '00';
+          });
+        return;
+      }
+
+      document.getElementById('days').textContent =
+        Math.floor(distance / 86400000);
+
+      document.getElementById('hours').textContent =
+        Math.floor((distance % 86400000) / 3600000);
+
+      document.getElementById('minutes').textContent =
+        Math.floor((distance % 3600000) / 60000);
+
+      document.getElementById('seconds').textContent =
+        Math.floor((distance % 60000) / 1000);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    async function shareInvitation() {
+      const data = {
+        title: 'Aung & Nan Wedding Invitation',
+        text: 'Join us to celebrate our wedding on 25 December 2026.',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(data);
+        } catch (error) {
+          if (error.name !== 'AbortError') {
+            alert('Please copy the website link to share.');
+          }
+        }
+      } else {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          alert('Invitation link copied!');
+        } catch (error) {
+          prompt('Copy your invitation link:', window.location.href);
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
