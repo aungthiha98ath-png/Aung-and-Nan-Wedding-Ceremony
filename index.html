@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#faf5ef">
+  <meta name="theme-color" content="#fce7ed">
 
   <title>Aung & Nan | Wedding Invitation</title>
 
@@ -20,15 +20,21 @@
     }
 
     :root {
-      --cream: #faf5ef;
-      --pink: #e9c5c4;
-      --green: #647b62;
-      --gold: #b69a65;
-      --text: #554b45;
+      --pink-bg: #fff0f4;
+      --pink-light: #fce0e8;
+      --pink: #d985a0;
+      --pink-dark: #a94f70;
+      --green: #71836a;
+      --gold: #bc9b67;
+      --text: #604953;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: var(--cream);
+      background: var(--pink-bg);
       color: var(--text);
       font-family: 'Poppins', sans-serif;
       text-align: center;
@@ -36,15 +42,19 @@
 
     .hero {
       min-height: 100vh;
-      padding: 40px 20px;
+      padding: 35px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(ellipse at top, #fffaf5, transparent 70%),
-        var(--cream);
+        radial-gradient(
+          ellipse at top,
+          #fffafd 0%,
+          #fce7ed 55%,
+          #f6d6e0 100%
+        );
     }
 
     .frame {
@@ -52,30 +62,31 @@
       max-width: 650px;
       padding: 55px 25px;
       border: 1px solid var(--gold);
-      outline: 1px solid #dfc9a8;
+      outline: 1px solid #e8bdcc;
       outline-offset: -8px;
       border-radius: 180px 180px 12px 12px;
+      background: rgba(255, 250, 252, 0.48);
       position: relative;
     }
 
     .flower {
-      color: var(--green);
+      color: var(--pink-dark);
       font-size: 38px;
       margin-bottom: 18px;
     }
 
     .eyebrow {
       font-size: 11px;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--green);
+      color: var(--pink-dark);
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(55px, 12vw, 85px);
       font-weight: 400;
-      color: var(--green);
+      color: var(--pink-dark);
       line-height: 1.25;
       margin-top: 25px;
     }
@@ -97,7 +108,7 @@
 
     .date {
       font-family: 'Playfair Display', serif;
-      color: var(--green);
+      color: var(--pink-dark);
       font-size: 22px;
       letter-spacing: 2px;
       margin: 22px 0 8px;
@@ -112,10 +123,10 @@
       display: inline-block;
       padding: 13px 28px;
       margin-top: 28px;
-      border: 1px solid var(--green);
+      border: 1px solid var(--pink-dark);
       border-radius: 30px;
       color: white;
-      background: var(--green);
+      background: var(--pink-dark);
       text-decoration: none;
       font-family: inherit;
       font-size: 12px;
@@ -126,7 +137,7 @@
 
     .btn:hover {
       background: transparent;
-      color: var(--green);
+      color: var(--pink-dark);
     }
 
     section {
@@ -137,14 +148,15 @@
       font-family: 'Playfair Display', serif;
       font-size: 30px;
       font-weight: 400;
-      color: var(--green);
-      margin-bottom: 22px;
+      color: var(--pink-dark);
+      margin: 20px 0;
     }
 
     .details {
       max-width: 500px;
       margin: auto;
       line-height: 2;
+      overflow-wrap: anywhere;
     }
 
     .countdown {
@@ -162,7 +174,7 @@
       display: block;
       font-family: 'Playfair Display', serif;
       font-size: 30px;
-      color: var(--green);
+      color: var(--pink-dark);
     }
 
     .countdown span {
@@ -171,14 +183,32 @@
     }
 
     .venue {
-      background: #f1e9df;
+      background: linear-gradient(
+        180deg,
+        #fbe0e8,
+        #fff2f5
+      );
+    }
+
+    .venue-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--pink-dark);
+      margin-bottom: 18px;
+    }
+
+    .address {
+      max-width: 430px;
+      margin: 12px auto;
+      line-height: 1.9;
     }
 
     .footer {
       padding: 35px 20px;
-      color: var(--green);
+      color: var(--pink-dark);
+      background: #fce4eb;
       font-family: 'Great Vibes', cursive;
-      font-size: 30px;
+      font-size: 32px;
     }
 
     .hidden {
@@ -198,8 +228,16 @@
         font-size: 25px;
       }
 
+      .countdown span {
+        font-size: 9px;
+      }
+
       section {
         padding: 55px 18px;
+      }
+
+      .eyebrow {
+        letter-spacing: 2px;
       }
     }
   </style>
@@ -207,12 +245,15 @@
 
 <body>
 
-  <!-- COVER PAGE -->
+  <!-- WEDDING COVER -->
   <header class="hero">
     <div class="frame">
+
       <div class="flower">❀</div>
 
-      <p class="eyebrow">Together with our families</p>
+      <p class="eyebrow">
+        Together with our families
+      </p>
 
       <p class="intro">
         With love and happiness,<br>
@@ -230,6 +271,7 @@
       <button class="btn" onclick="openInvitation()">
         OPEN INVITATION ♡
       </button>
+
     </div>
   </header>
 
@@ -265,36 +307,50 @@
         </div>
       </div>
 
-      <p class="date">25 December 2026</p>
+      <p class="date">Friday, 25 December 2026</p>
+      <p>9:00 AM – 11:00 AM</p>
     </section>
 
-    <!-- VENUE: REPLACE WITH REAL DETAILS -->
+    <!-- WEDDING VENUE -->
     <section class="venue">
-      <p class="eyebrow">Join us to celebrate</p>
+
+      <p class="eyebrow">You are warmly invited</p>
       <h2>Wedding Ceremony</h2>
 
+      <p class="venue-name">Oriental House</p>
+
       <p class="details">
-        <strong>Time</strong><br>
-        Please update ceremony time<br><br>
+        <strong>Date</strong><br>
+        Friday, 25 December 2026<br><br>
 
-        <strong>Venue</strong><br>
-        Please add your wedding venue<br><br>
-
-        <strong>Address</strong><br>
-        Please add the full address
+        <strong>Ceremony Time</strong><br>
+        9:00 AM – 11:00 AM
       </p>
+
+      <div class="address">
+        <strong>Venue Address</strong>
+        <p>
+          No.8, Corner of 64th Street &amp; 27th Street,
+          Aung Taw Mu Quarter,
+          Chan Aye Thar Zan Tsp,
+          Mandalay, Myanmar.
+        </p>
+      </div>
 
       <a
         class="btn"
-        href="https://maps.google.com/"
+        href="https://www.google.com/maps/search/?api=1&query=Oriental+House+No.8+Corner+of+64th+Street+and+27th+Street+Aung+Taw+Mu+Quarter+Chan+Aye+Thar+Zan+Mandalay+Myanmar"
         target="_blank"
         rel="noopener noreferrer">
-        VIEW LOCATION
+        VIEW ON GOOGLE MAPS ♡
       </a>
+
     </section>
 
+    <!-- CLOSING MESSAGE -->
     <section>
       <div class="flower">❀</div>
+
       <h2>With Love</h2>
 
       <p class="details">
@@ -325,10 +381,10 @@
       });
     }
 
-    // Wedding date: 25 December 2026
-    // Change the time if your ceremony starts at a specific hour.
+    // Wedding date and time: Myanmar time (UTC+06:30)
+    // Ceremony starts at 9:00 AM on 25 December 2026.
     const weddingDate = new Date(
-      '2026-12-25T10:00:00+06:30'
+      '2026-12-25T09:00:00+06:30'
     ).getTime();
 
     function updateCountdown() {
@@ -362,7 +418,7 @@
     async function shareInvitation() {
       const data = {
         title: 'Aung & Nan Wedding Invitation',
-        text: 'Join us to celebrate our wedding on 25 December 2026.',
+        text: 'Join us at Oriental House, Mandalay, on 25 December 2026, from 9:00 AM to 11:00 AM.',
         url: window.location.href
       };
 
@@ -376,10 +432,15 @@
         }
       } else {
         try {
-          await navigator.clipboard.writeText(window.location.href);
+          await navigator.clipboard.writeText(
+            window.location.href
+          );
           alert('Invitation link copied!');
         } catch (error) {
-          prompt('Copy your invitation link:', window.location.href);
+          prompt(
+            'Copy your invitation link:',
+            window.location.href
+          );
         }
       }
     }
