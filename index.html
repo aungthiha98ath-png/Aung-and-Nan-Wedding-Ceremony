@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fff5f5">
+
   <title>Aung & Nan | Wedding Invitation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,6 +51,7 @@
     }
 
     .cover {
+      min-height: 100vh;
       min-height: 100svh;
       display: flex;
       align-items: center;
@@ -93,7 +95,7 @@
       border: 1px solid rgba(184,154,99,.7);
       outline: 1px solid rgba(184,154,99,.3);
       outline-offset: 7px;
-      background: rgba(255,250,245,.78);
+      background: rgba(255,250,245,.85);
       border-radius: 180px 180px 12px 12px;
       box-shadow: 0 15px 50px rgba(110,65,77,.08);
     }
@@ -330,19 +332,8 @@
       margin-top: 16px;
     }
 
-    .video-note {
-      margin: 12px 0 0;
-      text-align: center;
-      font-size: 11px;
-      color: #8b747a;
-    }
-
     .closing {
       background: linear-gradient(145deg, #f8e5e8, #fffaf5);
-    }
-
-    .closing .section-title {
-      margin-bottom: 12px;
     }
 
     footer {
@@ -400,7 +391,7 @@
 
 <body>
 
-  <!-- COVER -->
+  <!-- WEDDING COVER -->
   <section class="cover" id="cover">
     <div class="cover-card">
       <div class="eyebrow">Together with our families</div>
@@ -429,6 +420,7 @@
   <!-- MAIN INVITATION -->
   <main id="invitation">
 
+    <!-- OUR STORY -->
     <section class="section intro">
       <div class="section-inner">
         <div class="eyebrow">A day to remember</div>
@@ -555,8 +547,8 @@
             class="video-frame"
             id="weddingVideo"
             src="about:blank"
-            data-src="https://vortechcomms-my.sharepoint.com/personal/aung_thiha_vortechcomms_com1/_layouts/15/embed.aspx?UniqueId=ff53b303-20d0-4b21-8130-4de78d354a56&amp;nav=%7B%22playbackOptions%22%3A%7B%22startTimeInSeconds%22%3A0%7D%7D&amp;embed=%7B%22af%22%3Atrue%2C%22ust%22%3Afalse%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
-            title="TOGETHER-Wedding SlideShow Video.mp4"
+            data-src="https://drive.google.com/file/d/1G3dz4Jh14hMafXu02DchvDXa8cmsJb4G/preview"
+            title="TOGETHER - Wedding Slideshow Video"
             allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen
             loading="lazy"
@@ -572,17 +564,18 @@
             </button>
           </div>
 
-          <p class="video-note">
+          <p style="text-align:center; font-size:11px; color:#8b747a;">
             Please enjoy our special memories ♡
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CLOSING -->
+    <!-- CLOSING MESSAGE -->
     <section class="section closing">
       <div class="section-inner">
         <div class="floral">❦</div>
+
         <h2 class="section-title">With Love, Aung & Nan</h2>
 
         <p>
@@ -590,7 +583,7 @@
           Thank you for being part of our love story.
         </p>
 
-        <p class="script" style="font-size: 28px; color: var(--deep-rose);">
+        <p class="script" style="font-size:28px; color:var(--deep-rose);">
           Forever starts here ♡
         </p>
 
@@ -599,7 +592,7 @@
         </button>
 
         <div class="back-top">
-          <a href="#cover" style="color: var(--deep-rose); font-size: 12px;">
+          <a href="#cover" style="color:var(--deep-rose); font-size:12px;">
             Back to Top ↑
           </a>
         </div>
@@ -616,15 +609,22 @@
     // Open the invitation
     const openButton = document.getElementById("openInvitation");
     const invitation = document.getElementById("invitation");
+    const cover = document.getElementById("cover");
 
     openButton.addEventListener("click", () => {
       invitation.classList.add("visible");
-      document.getElementById("cover").style.display = "none";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      cover.style.display = "none";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     });
 
     // Wedding countdown: 9:00 AM Myanmar time (UTC+06:30)
-    const weddingDate = new Date("2026-12-25T09:00:00+06:30").getTime();
+    const weddingDate = new Date(
+      "2026-12-25T09:00:00+06:30"
+    ).getTime();
 
     function updateCountdown() {
       const now = Date.now();
@@ -654,7 +654,7 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // Load and play the SharePoint video inside the invitation
+    // Google Drive video: open inside the same page
     const playButton = document.getElementById("playVideo");
     const closeButton = document.getElementById("closeVideo");
     const videoPlayer = document.getElementById("videoPlayer");
@@ -664,8 +664,7 @@
       videoPlayer.classList.add("open");
       playButton.setAttribute("aria-expanded", "true");
 
-      if (weddingVideo.src === "about:blank" ||
-          weddingVideo.getAttribute("src") === "about:blank") {
+      if (weddingVideo.getAttribute("src") === "about:blank") {
         weddingVideo.src = weddingVideo.dataset.src;
       }
 
@@ -675,8 +674,8 @@
       });
     });
 
+    // Close the player and stop playback
     closeButton.addEventListener("click", () => {
-      // Resetting the iframe stops video playback
       weddingVideo.src = "about:blank";
       videoPlayer.classList.remove("open");
       playButton.setAttribute("aria-expanded", "false");
@@ -700,8 +699,10 @@
       try {
         if (navigator.share) {
           await navigator.share(shareData);
-        } else if (navigator.clipboard &&
-                   window.isSecureContext) {
+        } else if (
+          navigator.clipboard &&
+          window.isSecureContext
+        ) {
           await navigator.clipboard.writeText(window.location.href);
           alert("Wedding invitation link copied!");
         } else {
