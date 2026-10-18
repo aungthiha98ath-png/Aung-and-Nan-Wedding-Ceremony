@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fce7ed">
+  <meta name="theme-color" content="#fff0f3">
 
   <title>Aung & Nan | Wedding Invitation</title>
 
@@ -20,13 +20,14 @@
     }
 
     :root {
-      --pink-bg: #fff0f4;
-      --pink-light: #fce0e8;
-      --pink: #d985a0;
-      --pink-dark: #a94f70;
-      --green: #71836a;
-      --gold: #bc9b67;
-      --text: #604953;
+      --pink-bg: #fff0f3;
+      --pink-light: #ffe0e7;
+      --pink: #d98299;
+      --pink-dark: #a94e6b;
+      --rose: #c76e88;
+      --gold: #b99a62;
+      --cream: #fffaf5;
+      --text: #66505a;
     }
 
     html {
@@ -49,12 +50,8 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(
-          ellipse at top,
-          #fffafd 0%,
-          #fce7ed 55%,
-          #f6d6e0 100%
-        );
+        radial-gradient(ellipse at top, #fffafc, transparent 70%),
+        linear-gradient(135deg, #fff0f3, #f9dce5);
     }
 
     .frame {
@@ -62,11 +59,11 @@
       max-width: 650px;
       padding: 55px 25px;
       border: 1px solid var(--gold);
-      outline: 1px solid #e8bdcc;
+      outline: 1px solid #e9bdc9;
       outline-offset: -8px;
       border-radius: 180px 180px 12px 12px;
-      background: rgba(255, 250, 252, 0.48);
-      position: relative;
+      background: rgba(255, 250, 245, 0.55);
+      box-shadow: 0 15px 45px rgba(169, 78, 107, 0.08);
     }
 
     .flower {
@@ -84,18 +81,17 @@
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(55px, 12vw, 85px);
+      font-size: clamp(58px, 12vw, 88px);
       font-weight: 400;
       color: var(--pink-dark);
       line-height: 1.25;
-      margin-top: 25px;
+      margin-top: 22px;
     }
 
     .and {
       font-family: 'Great Vibes', cursive;
-      font-size: 40px;
+      font-size: 42px;
       color: var(--gold);
-      margin: 0;
     }
 
     .intro {
@@ -121,8 +117,8 @@
 
     .btn {
       display: inline-block;
-      padding: 13px 28px;
-      margin-top: 28px;
+      padding: 13px 26px;
+      margin-top: 25px;
       border: 1px solid var(--pink-dark);
       border-radius: 30px;
       color: white;
@@ -136,8 +132,9 @@
     }
 
     .btn:hover {
-      background: transparent;
+      background: var(--cream);
       color: var(--pink-dark);
+      transform: translateY(-2px);
     }
 
     section {
@@ -149,66 +146,106 @@
       font-size: 30px;
       font-weight: 400;
       color: var(--pink-dark);
-      margin: 20px 0;
+      margin: 16px 0 22px;
     }
 
     .details {
-      max-width: 500px;
+      max-width: 520px;
       margin: auto;
       line-height: 2;
-      overflow-wrap: anywhere;
+      font-size: 14px;
     }
 
     .countdown {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 22px;
-      margin: 30px 0;
+      margin: 32px 0;
     }
 
     .countdown div {
-      min-width: 55px;
+      min-width: 58px;
+      padding: 12px 8px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid #f1d2dc;
     }
 
     .countdown strong {
       display: block;
       font-family: 'Playfair Display', serif;
-      font-size: 30px;
+      font-size: 29px;
       color: var(--pink-dark);
     }
 
     .countdown span {
-      font-size: 10px;
+      font-size: 9px;
       letter-spacing: 1px;
     }
 
     .venue {
       background: linear-gradient(
-        180deg,
-        #fbe0e8,
-        #fff2f5
+        145deg,
+        #f9dce5,
+        #fff1f4
       );
+      border-top: 1px solid #f0d0d9;
+      border-bottom: 1px solid #f0d0d9;
     }
 
     .venue-name {
       font-family: 'Playfair Display', serif;
-      font-size: 24px;
       color: var(--pink-dark);
-      margin-bottom: 18px;
+      font-size: 24px;
+      margin-bottom: 14px;
     }
 
     .address {
-      max-width: 430px;
+      max-width: 450px;
       margin: 12px auto;
+      overflow-wrap: anywhere;
+    }
+
+    .video-section {
+      background: var(--cream);
+    }
+
+    .video-icon {
+      font-size: 45px;
+      color: var(--pink-dark);
+      margin: 15px 0;
+    }
+
+    .video-description {
+      max-width: 440px;
+      margin: 0 auto;
       line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .video-btn {
+      background: linear-gradient(
+        135deg,
+        #c76e88,
+        #a94e6b
+      );
+      box-shadow: 0 7px 18px rgba(169, 78, 107, 0.2);
     }
 
     .footer {
-      padding: 35px 20px;
+      padding: 40px 20px;
+      background: var(--pink-bg);
       color: var(--pink-dark);
-      background: #fce4eb;
       font-family: 'Great Vibes', cursive;
-      font-size: 32px;
+      font-size: 34px;
+    }
+
+    .footer p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-top: 10px;
     }
 
     .hidden {
@@ -221,23 +258,23 @@
       }
 
       .countdown {
-        gap: 12px;
+        gap: 9px;
+      }
+
+      .countdown div {
+        min-width: 64px;
       }
 
       .countdown strong {
-        font-size: 25px;
-      }
-
-      .countdown span {
-        font-size: 9px;
+        font-size: 24px;
       }
 
       section {
         padding: 55px 18px;
       }
 
-      .eyebrow {
-        letter-spacing: 2px;
+      h2 {
+        font-size: 27px;
       }
     }
   </style>
@@ -275,7 +312,7 @@
     </div>
   </header>
 
-  <!-- INVITATION DETAILS -->
+  <!-- WEDDING DETAILS -->
   <main id="invitation" class="hidden">
 
     <section>
@@ -293,14 +330,17 @@
           <strong id="days">00</strong>
           <span>DAYS</span>
         </div>
+
         <div>
           <strong id="hours">00</strong>
           <span>HOURS</span>
         </div>
+
         <div>
           <strong id="minutes">00</strong>
           <span>MINUTES</span>
         </div>
+
         <div>
           <strong id="seconds">00</strong>
           <span>SECONDS</span>
@@ -308,50 +348,77 @@
       </div>
 
       <p class="date">Friday, 25 December 2026</p>
-      <p>9:00 AM – 11:00 AM</p>
+
+      <p class="details">
+        Ceremony Time<br>
+        <strong>9:00 AM – 11:00 AM</strong>
+      </p>
     </section>
 
     <!-- WEDDING VENUE -->
     <section class="venue">
 
-      <p class="eyebrow">You are warmly invited</p>
+      <p class="eyebrow">Join us to celebrate</p>
       <h2>Wedding Ceremony</h2>
 
       <p class="venue-name">Oriental House</p>
 
       <p class="details">
-        <strong>Date</strong><br>
-        Friday, 25 December 2026<br><br>
-
-        <strong>Ceremony Time</strong><br>
+        <strong>Friday, 25 December 2026</strong><br>
         9:00 AM – 11:00 AM
       </p>
 
-      <div class="address">
-        <strong>Venue Address</strong>
-        <p>
-          No.8, Corner of 64th Street &amp; 27th Street,
-          Aung Taw Mu Quarter,
-          Chan Aye Thar Zan Tsp,
-          Mandalay, Myanmar.
-        </p>
-      </div>
+      <p class="details address">
+        <strong>Venue Address</strong><br>
+        No.8, Corner of 64th Street &amp; 27th Street,
+        Aung Taw Mu Quarter, Chan Aye Thar Zan Tsp,
+        Mandalay
+      </p>
 
       <a
         class="btn"
-        href="https://www.google.com/maps/search/?api=1&query=Oriental+House+No.8+Corner+of+64th+Street+and+27th+Street+Aung+Taw+Mu+Quarter+Chan+Aye+Thar+Zan+Mandalay+Myanmar"
+        href="https://www.google.com/maps/search/?api=1&amp;query=Oriental+House%2C+No.8%2C+Corner+of+64th+Street+and+27th+Street%2C+Aung+Taw+Mu+Quarter%2C+Chan+Aye+Thar+Zan%2C+Mandalay"
         target="_blank"
         rel="noopener noreferrer">
-        VIEW ON GOOGLE MAPS ♡
+        VIEW LOCATION ↗
       </a>
 
     </section>
 
-    <!-- CLOSING MESSAGE -->
+    <!-- PRE-WEDDING VIDEO -->
+    <section class="video-section">
+
+      <p class="eyebrow">A little story of our love</p>
+
+      <div class="video-icon">♡</div>
+
+      <h2>Our Pre-Wedding Film</h2>
+
+      <p class="video-description">
+        Every love story is beautiful, but ours is
+        our favorite. We would love for you to watch
+        a little memory of our journey together.
+      </p>
+
+      <a
+        class="btn video-btn"
+        href="https://vortechcomms-my.sharepoint.com/:v:/g/personal/aung_thiha_vortechcomms_com1/IQADs1P_0CAhS4EwTeeNNUpWASbqOo4EHF-EsRrseSvfwl0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=u06chm"
+        target="_blank"
+        rel="noopener noreferrer">
+        ▶ WATCH OUR VIDEO
+      </a>
+
+      <p class="details" style="margin-top: 15px;">
+        With love, Aung &amp; Nan
+      </p>
+
+    </section>
+
+    <!-- CLOSING -->
     <section>
       <div class="flower">❀</div>
 
-      <h2>With Love</h2>
+      <h2>With Love &amp; Gratitude</h2>
 
       <p class="details">
         Your presence is the most precious gift
@@ -365,14 +432,16 @@
     </section>
 
     <footer class="footer">
-      Aung & Nan
+      Aung &amp; Nan
+      <p>25 · 12 · 2026</p>
     </footer>
 
   </main>
 
   <script>
     function openInvitation() {
-      const invitation = document.getElementById('invitation');
+      const invitation =
+        document.getElementById('invitation');
 
       invitation.classList.remove('hidden');
 
@@ -381,11 +450,9 @@
       });
     }
 
-    // Wedding date and time: Myanmar time (UTC+06:30)
-    // Ceremony starts at 9:00 AM on 25 December 2026.
-    const weddingDate = new Date(
-      '2026-12-25T09:00:00+06:30'
-    ).getTime();
+    // Wedding ceremony starts at 9:00 AM Myanmar time.
+    const weddingDate =
+      new Date('2026-12-25T09:00:00+06:30').getTime();
 
     function updateCountdown() {
       const now = Date.now();
@@ -418,7 +485,7 @@
     async function shareInvitation() {
       const data = {
         title: 'Aung & Nan Wedding Invitation',
-        text: 'Join us at Oriental House, Mandalay, on 25 December 2026, from 9:00 AM to 11:00 AM.',
+        text: 'Join us on 25 December 2026, from 9 AM to 11 AM, at Oriental House, Mandalay.',
         url: window.location.href
       };
 
@@ -427,20 +494,15 @@
           await navigator.share(data);
         } catch (error) {
           if (error.name !== 'AbortError') {
-            alert('Please copy the website link to share.');
+            alert('Please copy the invitation link from your browser.');
           }
         }
       } else {
         try {
-          await navigator.clipboard.writeText(
-            window.location.href
-          );
+          await navigator.clipboard.writeText(window.location.href);
           alert('Invitation link copied!');
         } catch (error) {
-          prompt(
-            'Copy your invitation link:',
-            window.location.href
-          );
+          prompt('Copy your invitation link:', window.location.href);
         }
       }
     }
